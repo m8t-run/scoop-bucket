@@ -10,6 +10,7 @@
   "installer": {
     "script": [
       "Push-Location \"$dir\"",
+      "npm pkg delete devDependencies 2>&1 | Out-Null",
       "npm install --omit=dev --no-package-lock --no-audit --no-fund 2>&1 | Out-Null",
       "Pop-Location"
     ]
